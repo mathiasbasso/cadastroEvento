@@ -5,7 +5,7 @@ package com.senac.cadastroEvento.Controller;
 import com.senac.cadastroEvento.Model.Usuario;
 import com.senac.cadastroEvento.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jdbc.core.JdbcAggregateOperations;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

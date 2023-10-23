@@ -2,7 +2,7 @@ package com.senac.cadastroEvento.Service;
 
 import com.senac.cadastroEvento.Model.Usuario;
 import com.senac.cadastroEvento.Repository.UsuarioRepository;
-import jdk.internal.access.JavaIOFileDescriptorAccess;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class UsuarioService {
     public boolean deleteUsuario(Long id) {
         Optional<Usuario> existingGame = usuarioRepository.findById(id);
         if (existingGame.isPresent()) {
-            JavaIOFileDescriptorAccess existingUsuario;
+
             usuarioRepository.delete(existingUsuario.get());
             return true;
         }
