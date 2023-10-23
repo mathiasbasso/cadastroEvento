@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class UsuarioService {
+    UsuarioRepository usuarioRepository;
     @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
@@ -23,9 +24,24 @@ public class UsuarioService {
     public Optional<Usuario> getUsuarioById(Long id) {
         return usuarioRepository.findById(id);
     }
+    public Usuario createGame(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+
+    public Usuario updateUsuario(Long id, Usuario updatedUsuario) {
+        Optional<Usuario> existingUsuario = usuarioRepository.findById(id);
+        if (existingUsuario.isPresent()) {
+            Usuario usuario = existingUsuario.get();
+            usuario.setNome(updatedUsuario.getNome());
+            usuario.setEmail(updatedUsuario.getEmail());
+            return usuarioRepository.save(usuario);
+        }
+        return null;
+    }
+
     public boolean deleteUsuario(Long id) {
-        Optional<Usuario> existingGame = usuarioRepository.findById(id);
-        if (existingGame.isPresent()) {
+        Optional<Usuario> existingUsuario = usuarioRepository.findById(id);
+        if (existingUsuario.isPresent()) {
 
             usuarioRepository.delete(existingUsuario.get());
             return true;
