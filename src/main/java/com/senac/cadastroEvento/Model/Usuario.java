@@ -1,16 +1,14 @@
 package com.senac.cadastroEvento.Model;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long id;
-    private String nome;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long id;
+    public String nome;
 
     public String getNome() {
         return nome;

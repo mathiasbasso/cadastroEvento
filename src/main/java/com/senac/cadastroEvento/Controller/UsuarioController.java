@@ -28,6 +28,10 @@ import java.util.Optional;
         public Usuario getUsuarioById(@PathVariable Long id) {
             return usuarioRepository.findById(id).orElse(null);
         }
+    @PostMapping
+    public Usuario createUsuario(@RequestBody Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
         @PutMapping("/{id}")
         public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id, @RequestBody Usuario updatedUsuario) {
             Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
