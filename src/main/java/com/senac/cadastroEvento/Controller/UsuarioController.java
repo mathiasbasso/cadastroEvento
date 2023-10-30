@@ -28,7 +28,7 @@ import java.util.Optional;
         public Usuario getUsuarioById(@PathVariable Long id) {
             return usuarioRepository.findById(id).orElse(null);
         }
-    @PostMapping("/{id}")
+    @PostMapping
     public Usuario createUsuario(@RequestBody Usuario usuario) {
         return usuarioRepository.save(usuario);
     }

@@ -1,14 +1,13 @@
-.card {
+ .card {
   width: 500px;
   margin: 0 auto;
   text-align: center;
   border: 1px solid #3c1ee8;
   border-radius: 5px;
   padding: 20px;
-  background-color: LightBlue;
 }
 
 .card img {
   width: 50%;
   border-radius: 5px;
-}
+}  
