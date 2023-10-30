@@ -1,4 +1,4 @@
-.card {
+ .card {
   width: 500px;
   margin: 0 auto;
   text-align: center;
@@ -10,4 +10,8 @@
 .card img {
   width: 50%;
   border-radius: 5px;
-}
+}  
+
+
+
+
