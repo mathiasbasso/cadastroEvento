@@ -24,7 +24,7 @@ import java.util.Optional;
             return usuarioRepository.findAll();
         }
 
-        @GetMapping("/{id}")
+        @GetMapping("/novo")
         public Usuario getUsuarioById(@PathVariable Long id) {
             return usuarioRepository.findById(id).orElse(null);
         }
