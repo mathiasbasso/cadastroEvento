@@ -7,8 +7,8 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
-    public String nome;
+    private Long id;
+    private String nome;
 
 
     public String getNome() {

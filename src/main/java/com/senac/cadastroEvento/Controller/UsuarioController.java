@@ -7,36 +7,41 @@ import com.senac.cadastroEvento.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/eventos")
+@Controller
+@RequestMapping("/usuarios")
     public class UsuarioController {
 
-        @Autowired
-        private UsuarioRepository usuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
-        @GetMapping
-        public List<Usuario> getAllUsuarios() {
-            return usuarioRepository.findAll();
-        }
+    @GetMapping
+    public String listarUsuarios(Model model) {
+        model.addAttribute("usuarios", usuarioRepository.findAll());
+        return "index";
+    }
 
-        @GetMapping("/novo")
-        public Usuario getUsuarioById(@PathVariable Long id) {
-            return usuarioRepository.findById(id).orElse(null);
-        }
-    @PostMapping
-    public Usuario createUsuario(@RequestBody Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    @GetMapping("/novo")
+    public String novoUsuarioForm(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "formularioUsuario";
+    }
+    @PostMapping("/novo")
+    public String salvarNovoUsuario(@ModelAttribute Usuario usuario) {
+        usuarioRepository.save(usuario);
+        return "redirect:/usuarios";
     }
         @PutMapping("/{id}")
         public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id, @RequestBody Usuario updatedUsuario) {
             Optional<Usuario> optionalUsuario = usuarioRepository.findById(id);
 
-            if (!optionalUsuario.isPresent()) {
+            if (optionalUsuario.isEmpty()) {
                 return ResponseEntity.notFound().build();
             }
 
