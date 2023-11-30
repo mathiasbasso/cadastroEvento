@@ -1,15 +1,25 @@
 package com.senac.cadastroEvento.Model;
 
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 @Entity
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
 
+    private String nome;
+    private String email;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -26,16 +36,5 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 }
 

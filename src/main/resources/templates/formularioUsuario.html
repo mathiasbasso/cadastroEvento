@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="image/x-icon" href="img/favicon.png">
-    <link rel="stylesheet" href="../static/fontawesome-free" type="text/css">
+    <link rel="stylesheet" th:href="@{/fontawesome-free/css/fontawesome.css}" type="text/css">
     <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/sb-admin-2.min.css" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/sb-admin-2.min.css}" type="text/css">
     <title>SB Admin 2 - Login</title>
 </head>
 
@@ -29,22 +29,24 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Booora pro evento!</h1>
                                 </div>
-                                <form class="user" th:object= "${usuario}" method= "post"  th:action=" @{/usuarios/novo} " >
+                                <form action="/novo" th:object="${usuario}" method="post" th:action=" @{/usuarios/novo} " >
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user"
+                                            <label for="nome">Nome usuario</label>
+                                            <input type="text"  class="form-control form-control-user"
                                                    id="nome" name="nome" th:field="*{nome}" required placeholder="Nome completo">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user"
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control form-control-user"
                                                id="email" name="email" th:field="*{email}" required placeholder="Endereço de email">
                                     </div>
-                                    <a href="index.html" class="btn btn-primary btn-user btn-block"
-                                       type="submit">
-                                        Registrar
-                                    </a>
+                                    <button type="submit">Registrar</button>
                                 </form>
+                                <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                    INICIO
+                                </a>
                                 <div class="text-center">
                                     <a class="small" href="index.html">Voltar a página inicial</a>
                                 </div>
@@ -58,10 +60,10 @@
 </div>
 
 
-<script src="../static/jquery/jquery.min.js"></script>
-<script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../static/jquery-easing/jquery.easing.min.js"></script>
-<script src="../static/js/sb-admin-2.min.js"></script>
+<script src="/jquery/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/jquery-easing/jquery.easing.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 </body>
 
 </html>

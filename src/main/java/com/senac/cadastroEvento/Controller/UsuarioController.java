@@ -21,7 +21,7 @@ import java.util.Optional;
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @GetMapping
+    @GetMapping("/index.html")
     public String listarUsuarios(Model model) {
         model.addAttribute("usuarios", usuarioRepository.findAll());
         return "index";
@@ -35,7 +35,7 @@ import java.util.Optional;
     @PostMapping("/novo")
     public String salvarNovoUsuario(@ModelAttribute Usuario usuario) {
         usuarioRepository.save(usuario);
-        return "redirect:/usuarios";
+        return "redirect: /usuarios";
     }
         @PutMapping("/{id}")
         public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id, @RequestBody Usuario updatedUsuario) {
@@ -56,6 +56,5 @@ import java.util.Optional;
         public void deleteUsuario(@PathVariable Long id) {
             usuarioRepository.deleteById(id);
         }
-
 
 }
