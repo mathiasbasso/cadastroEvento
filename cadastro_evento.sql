@@ -29,3 +29,4 @@ delete from usuario where id=352;
 delete from usuario where id=353;
 delete from usuario where id=402;
 delete from usuario where id=452;
+delete from usuario where id=10;

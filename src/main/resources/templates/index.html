@@ -1,13 +1,348 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Eventos</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img2/Eventos.jpg" rel="icon">
+  <link href="/img2/Eventos.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/vendor2/aos/aos.css}" rel="stylesheet">
+  <link th:href="@{/vendor2/bootstrap2/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor2/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/vendor2/glightbox/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{/vendor2/swiper/swiper-bundle.min.css}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link th:href="@{/css2/style.css}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: TheEvent
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>$gmk
-<a href="ListaUsuarios.html">users</a>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center ">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
+        <a href="index.html" class="scrollto"> <img src="/img2/Eventos.jpg" alt="" height="60" width="100" title=""></a>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre a Empresa</a></li>
+          <li><a class="nav-link scrollto" href="#speakers">Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#hotels">Eventos Passados</a></li>
+          <li><a class="nav-link scrollto" href="#supporters">Parcerias</a></li>
+        </ul>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li> -->
+        
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0">Seja <span> Bem vindo </span> ao nosso site</h1>
+      <p class="mb-4 pb-0"> Em destaque os eventos mais famosos no mundo!</p>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-9">
+            <h2>Sobre a Empresa:</h2>
+            <p>A Eventos.com é uma plataforma online que oferece soluções abrangentes para a organização de eventos. 
+              Sua proposta inclui recursos para venda de ingressos, marketing, gestão de
+               participantes e suporte técnico. Projetada para simplificar o planejamento e execução de diversos tipos 
+               de eventos, a plataforma visa proporcionar uma experiência integrada tanto para organizadores.</p>
+          </div>
+          <div class="col-lg-3">
+            <img src="/img2/Avião.jpg" alt="" height="170" width="170">
+          </div>
+         
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Speakers Section ======= -->
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Todos os eventos </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+              <img src="/img2/speakers/eventos/expofemilogo.png" alt="Speaker 1" class="img-fluid">
+              <div class="details">
+                <h3><a th:href="@{/usuarios/expofemi}" th:target="_blank">
+                  ExpoFemi 2024</a> </h3>
+                <p></p>
+                <div class="social">
+                  <a href="https://www.instagram.com/expofemixanxere/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
+              <img src="/img2/speakers/eventos/oscarslogo.png" alt="Speaker 2" class="img-fluid">
+              <div class="details">
+                <h3><a th:href="@{/usuarios/espere}" th:target="_blank">
+                  Oscars 2024</a> </h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+              <img src="/img2/speakers/eventos/gotylogo.png" alt="Speaker 4" class="img-fluid">
+              <div class="details">
+                <h3><a th:href="@{/usuarios/espere}" th:target="_blank">
+                  The Game Awards</a> </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200">
+              <img src="/img2/speakers/eventos/rockinriologo.png" alt="Speaker 5" class="img-fluid">
+              <div class="details">
+                <h3><a th:href="@{/usuarios/espere}" th:target="_blank">
+                  Rock in Rio 2024</a> </h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Speakers Section -->
+
+    <!-- ======= Hotels Section ======= -->
+    <section id="hotels" class="section-with-bg">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Eventos passados </h2>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="/img2/hotels/Evento passado/Olimpiada 2020.webp" alt="Hotel 1" class="img-fluid">
+              </div>
+              <h3><a href="#">Olimpídas 2020</a></h3>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="/img2/hotels/Evento passado/Copa-2022.webp" alt="Hotel 2" class="img-fluid">
+              </div>
+              <h3><a href="#">Copa do Mundo 2022</a></h3>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill-half-full"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="/img2/hotels/Evento passado/VoleBol.jpg" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#">Volleyball Tournament 2020</a></h3>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======= Supporters Section ======= -->
+    <section id="supporters" class="section-with-bg">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Parcerias</h2>
+        </div>
+
+        <div class="row no-gutters supporters-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://123milhas.com/?ab123=ab123_a" target="_blank"><img src="/img2/supporters/123 Milhas.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+             <a href="https://www.trivago.com.br/en-US?rl=en-US&first_visit=1" target="_blank"><img src="/img2/supporters/Trivago.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://abeoc.org.br/" target="_blank"><img src="/img2/supporters/Abeoc.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://www.iccaworld.org/" target="_blank"><img src="/img2/supporters/Icca.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://embratur.com.br/" target="_blank"><img src="/img2/supporters/Embratur_logo.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://www.ubrafe.org.br/" target="_blank"><img src="/img2/supporters/ubrafe_logo.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://abeoc.org.br/" target="_blank"><img src="/img2/supporters/AbeocBrasil.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="supporter-logo">
+              <a href="https://www.viajanet.com.br/?gad_source=1&gclid=Cj0KCQiA4NWrBhD-ARIsAFCKwWsO3hoJw0ggtmCsehb1n5jp1AbUgN-7JJU540hi9HTr2FE6BwcPljcaArz7EALw_wcB&mktdata=key%3DB0DD78RJ42QHOH1K9EQSAAJ9NP%26clt_cc%3DBR%26clt_pr%3DG%26clt_n%3Dg%26accountid%3D9260754227%26campaignid%3D42386823%26adgroupid%3D139741547982%26clt_c%3D628362072616%26targetid%3Dkwd-16143591217%26locationid%3D1032138%26clt_kw%3Dviaja%2520net%26mt%3De%26d%3Dc%26gclid%3DCj0KCQiA4NWrBhD-ARIsAFCKwWsO3hoJw0ggtmCsehb1n5jp1AbUgN-7JJU540hi9HTr2FE6BwcPljcaArz7EALw_wcB%26id%3D20231211004951140479826790486840%26trackeame_user_id%3D12012305DCE51700767104072b140ee32-f88d-45c7-bd91-e263c121cec752885925"
+                 target="_blank"><img src="/img2/supporters/ViajaNet.png" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Sponsors Section -->
+   
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 footer-info">
+            <img src="/img2/Eventos.jpg" alt="Eventos.com">
+            <p>A Eventos.com é uma plataforma online que oferece soluções abrangentes para a organização de eventos. 
+              Sua proposta inclui recursos para venda de ingressos, marketing, gestão de
+               participantes e suporte técnico. Projetada para simplificar o planejamento e execução de diversos tipos 
+               de eventos, a plataforma visa proporcionar uma experiência integrada tanto para organizadores.</p>
+          </div>
+
+
+          <div class="col-lg-6 col-md-6 footer-contact text-center">
+            <h4>Fale com a gente!</h4>
+            <p>
+              Xanxerê, SC<br>
+              <strong>Telefone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> Eventos@Gmail.com<br>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Eventos.com</strong>. Todos os Direitos Reservados
+      </div>
+      <div class="credits">
+        Feito por <a href="https://github.com/mathiasbasso/cadastroEvento">Mathias e Igor</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor2/aos/aos.js"></script>
+  <script src="/vendor2/bootstrap2/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor2/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor2/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor2/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js2/main.js"></script>
+
+  </main>
+
 </body>
+
 </html>

@@ -21,16 +21,32 @@ import java.util.Optional;
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @GetMapping("/lista")
-    public String listarUsuarios(Model model) {
-        model.addAttribute("usuarios", usuarioRepository.findAll());
-        return "ListaUsuarios";
+    @GetMapping("/eventos")
+    public String listarEventos(Model model) {
+        model.addAttribute("usuarios", new Usuario());
+        return "index";
+    }
+    @GetMapping("/espere")
+    public String EspereEventos(Model model) {
+        model.addAttribute("usuarios", new Usuario());
+        return "Espere";
+    }
+    @GetMapping("/expofemi")
+    public String ExpoFemiEventos(Model model) {
+        model.addAttribute("usuarios",new Usuario());
+        return "expofemi";
     }
 
     @GetMapping("/novo")
     public String novoUsuarioForm(Model model) {
         model.addAttribute("usuario", new Usuario());
         return "formularioUsuario";
+    }
+
+    @GetMapping("/lista")
+    public String ListaUsuario(Model model) {
+        model.addAttribute("usuarios",  usuarioRepository.findAll());
+        return "ListaUsuarios";
     }
     @PostMapping("/novo")
     public String salvarNovoUsuario(@ModelAttribute Usuario usuario) {
