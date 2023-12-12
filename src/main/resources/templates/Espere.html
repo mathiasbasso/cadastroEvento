@@ -42,12 +42,12 @@
     <div class="container-fluid container-xxl d-flex align-items-center">
 
       <div id="logo" class="me-auto text-center">
-        <img src="/img2/Eventos.jpg" alt=""  height="60" width="100" title="">
+        <a th:href="@{/usuarios/eventos}"  class="scrollto"> <img src="/img2/Eventos.jpg" height="60" width="100" alt="" title=""></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" th:href="@{usuarios/eventos}">Inicio</a></li>
+          <li><a class="nav-link scrollto active" th:href="@{/usuarios/eventos}">Inicio</a></li>
         </ul>
       </nav>
     </div>
